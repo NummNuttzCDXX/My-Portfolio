@@ -1,0 +1,67 @@
+:root {
+	font-size: clamp(16px, 2.5vmin, 40px);
+}
+
+body {
+	padding: 10vmin;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+
+	background-color: lightblue;
+}
+
+header {
+	width: 70vw;
+	--head-height: 400px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	height: var(--head-height);
+}
+
+/* About Me */
+.about {
+	margin-right: 10%;
+	height: calc(var(--head-height) - 4rem);
+
+	background-color: aliceblue;
+}
+
+main {
+	width: 70vw;
+}
+
+.card-container {
+	border: 2px solid black;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.card {
+	height: 200px;
+
+	border: 2px dashed red;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+footer img {
+	height: 400px;
+}
+
+/* Utility Classes */
+.shadow {
+	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.3);
+}
