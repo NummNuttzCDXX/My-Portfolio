@@ -3,7 +3,7 @@
 }
 
 body {
-	padding: 10vmin;
+	padding: 5vmin;
 
 	display: flex;
 	flex-direction: column;
@@ -14,7 +14,6 @@ body {
 }
 
 header {
-	width: 70vw;
 	--head-height: 400px;
 
 	display: flex;
@@ -28,7 +27,8 @@ header img {
 
 /* About Me */
 .about {
-	margin-right: 10%;
+	margin-right: 5%;
+	padding: 0 .5rem;
 	height: calc(var(--head-height) - 4rem);
 
 	background-color: aliceblue;
