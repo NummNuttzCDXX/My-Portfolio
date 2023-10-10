@@ -33,14 +33,36 @@ header img {
 	height: var(--head-height);
 }
 
+header .social-container {
+	margin-top: auto;
+	display: flex;
+	justify-content: end;
+}
+
+header .gh-icon {
+	height: 1.8rem;
+}
+
 /* About Me */
 .about {
 	margin-right: 5%;
-	padding: 0 .5rem;
+	padding: .5rem;
 	height: calc(var(--head-height) - 4rem);
 
 	border: 2px solid var(--accent-color);
 	background-color: aliceblue;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.about h2 {
+	margin-top: .5rem;
+}
+
+.about p {
+	margin-top: 0;
 }
 
 main {
@@ -51,7 +73,7 @@ main {
 	padding: .5rem;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 	gap: 1rem;
 }
 
@@ -100,10 +122,23 @@ main {
 
 .card .content h4 {
 	margin: .5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.content h4 .icon {
+	height: 1.2rem;
+}
+
+.icon-container a {
+	/* Fixes the underline that was appearing on icons */
+	text-decoration: none;
 }
 
 .card .content p {
 	margin: 0;
+	font-size: .9em;
 }
 
 footer {
@@ -118,6 +153,15 @@ footer {
 
 footer img {
 	height: 400px;
+}
+
+.icon {
+	transition: .5s;
+}
+
+.icon:hover {
+	scale: 1.2;
+	transform: rotate(2turn);
 }
 
 /* Utility Classes */
