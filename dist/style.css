@@ -1,5 +1,11 @@
+@font-face {
+	font-family: rubik;
+	src: url('./Rubik-VariableFont_wght.ttf');
+}
+
 :root {
 	font-size: clamp(16px, 2.5vmin, 40px);
+	font-family: rubik, Arial, Helvetica, sans-serif;
 
 	--accent-color: rgb(0, 180, 180);
 }
