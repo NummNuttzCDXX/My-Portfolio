@@ -101,8 +101,13 @@ main {
 }
 
 footer {
+	width: 100%;
+	background-color: var(--accent-color);
+	border-radius: 2rem;
+
 	display: flex;
 	justify-content: center;
+	gap: 2rem;
 }
 
 footer img {
