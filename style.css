@@ -22,7 +22,7 @@ body {
 }
 
 header {
-	--head-height: 400px;
+	--head-height: 45vmin;
 
 	display: flex;
 	justify-content: center;
@@ -149,6 +149,32 @@ footer img {
 
 .round-light {
 	border-radius: .5rem;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+	header {
+		--head-height: 250px;
+	}
+
+	.about {
+		height: auto;
+		margin: 0;
+	}
+}
+
+/* Smaller screens */
+@media (max-width: 450px) {
+	header {
+		flex-direction: column;
+		--head-height:350px
+	}
+
+	.about {
+		width: clamp(min-content, calc(var(--head-height) - 4rem), calc(var(--head-height) - 4rem));
+		height: initial;
+		margin: 0;
+	}
 }
 
 /* Bigger screens */
