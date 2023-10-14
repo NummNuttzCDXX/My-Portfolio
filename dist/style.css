@@ -92,6 +92,8 @@ main {
 	min-height: 50%;
 	object-fit: cover;
 	object-position: top;
+
+	cursor: pointer;
 }
 
 .content {
@@ -117,6 +119,29 @@ main {
 .card .content p {
 	margin: 0;
 	font-size: .9em;
+}
+
+.fullscreen-wrapper {
+	width: 100vw;
+	height: 100vh;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba(0, 0, 0, 0.542);
+	cursor: pointer;
+}
+
+.fullscreen-img {
+	max-width: 90vw;
+	max-height: 80vh;
+	object-fit: contain;
+	object-position: center;
 }
 
 footer {
@@ -149,6 +174,11 @@ footer img {
 
 .round-light {
 	border-radius: .5rem;
+}
+
+.hide {
+	display: none;
+	visibility: hidden;
 }
 
 /* Tablet */

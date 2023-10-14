@@ -6,6 +6,26 @@ export const Dom = (() => {
 	const images = importAll(require.context('./img', false, /\.(png|jpg|jpeg|svg)$/i)); // eslint-disable-line
 
 	/**
+	 * Toggle showing the clicked image in fullscreen
+	 *
+	 * @param {string} src Image `src` attr
+	 */
+	const toggleFullscreenImg = (src) => {
+		const fsContainer = document.querySelector('.fullscreen-wrapper');
+		// If container is hidden, reset src
+		if (fsContainer.classList.toggle('hide')) {
+			fsContainer.firstElementChild.src = '';
+			// Show scrollbar
+			document.querySelector('body').style.overflow = '';
+		} else {
+			// Else set src
+			fsContainer.firstElementChild.src = src;
+			// Hide scroll bar
+			document.querySelector('body').style.overflow = 'hidden';
+		}
+	};
+
+	/**
 	 * Set all image `src` on the page
 	 * - Dynamically add images to page
 	 */
@@ -45,7 +65,7 @@ export const Dom = (() => {
 		});
 	};
 
-	return {setImages};
+	return {setImages, toggleFullscreenImg};
 })();
 
 
