@@ -116,10 +116,18 @@ main {
 	color: aliceblue;
 }
 
+/* Regular .tooltip appears after delay */
 img:hover + .tooltip {
 	opacity: 1;
 	transition: opacity .5s ease-in-out;
 	transition-delay: 1.5s;
+}
+
+/* `.tooltip.instant` appears with no delay */
+img:hover + .tooltip.instant {
+	opacity: 1;
+	transition: opacity .5s linear;
+	transition-delay: 0ms;
 }
 
 .content {
@@ -191,8 +199,20 @@ footer > img {
 	object-fit: contain;
 }
 
+/* Should be last paragraph with
+Phone & Email */
+.contact p:last-of-type {
+	position: relative;
+}
+
 footer .icon {
 	height: 1.2rem;
+}
+
+/* Add pointer to E-Mail icon
+(not Phone icon) */
+footer .icon:last-of-type {
+	cursor: pointer;
 }
 
 footer span {
@@ -206,7 +226,7 @@ footer span {
 }
 
 /* All .icon's except footer icons */
-.icon:hover:not(footer .icon) {
+.icon:hover:not(footer .icon[alt="Phone"]) {
 	scale: 1.2;
 	transform: rotate(2turn);
 }
