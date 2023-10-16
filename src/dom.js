@@ -65,7 +65,48 @@ export const Dom = (() => {
 		});
 	};
 
-	return {setImages, toggleFullscreenImg};
+	/**
+	 * Position the tooltip relative to mouse position
+	 *
+	 * @param {MouseEvent} e
+	 */
+	const positionTooltip = (e) => {
+		const x = e.offsetX;
+		const y = e.offsetY;
+		const tooltip = e.target.nextElementSibling;
+
+		let offsetX;
+		let offsetY;
+		// If target is an icon
+		if (e.target.classList.contains('icon')) {
+			offsetX = x - tooltip.offsetWidth - 15;
+		// If mouseX is on the right half of img
+		} else if (x >= e.target.clientWidth / 2) {
+			// Place on left of cursor
+			offsetX = x - tooltip.offsetWidth - 5;
+		} else {
+			// Else place on right of cursor
+			offsetX = x + 5;
+		}
+
+		// If target is an icon
+		if (e.target.classList.contains('icon')) {
+			offsetY = y - tooltip.offsetHeight - 15;
+		// If mouseY is on top half
+		} else if (y < e.target.clientHeight / 2) {
+			// Place below cursor
+			offsetY = y + tooltip.offsetHeight + 5;
+		} else {
+			// Else place above
+			offsetY = y - tooltip.offsetHeight - 5;
+		}
+
+		// Position tooltip relative to cursor
+		tooltip.style.top = `${offsetY}px`;
+		tooltip.style.left = `${offsetX}px`;
+	};
+
+	return {setImages, toggleFullscreenImg, positionTooltip};
 })();
 
 
@@ -75,7 +116,7 @@ export const Dom = (() => {
  *
  * @return {object} Object containing imports
  */
-export function importAll(r) {
+function importAll(r) {
 	const imports = {};
 	r.keys().forEach((key) => (imports[key.replace('./', '')] = r(key)));
 
