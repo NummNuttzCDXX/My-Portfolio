@@ -63,6 +63,13 @@ export const Dom = (() => {
 					images['open-new-window.svg'].default;
 			}
 		});
+
+		// Set Phone & E-Mail icons
+		const contactIcons = document.querySelectorAll('footer .icon');
+		contactIcons.forEach((icon) => {
+			if (icon.alt == 'Phone') icon.src = images['phone-icon.svg'].default;
+			else if (icon.alt == 'E-Mail') icon.src = images['mail-icon.svg'].default;
+		});
 	};
 
 	/**

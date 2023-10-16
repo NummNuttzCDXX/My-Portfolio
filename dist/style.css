@@ -185,11 +185,22 @@ footer img {
 	height: 400px;
 }
 
+footer .icon {
+	height: 1.2rem;
+}
+
+footer span {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+
 .icon {
 	transition: .5s;
 }
 
-.icon:hover {
+/* All .icon's except footer icons */
+.icon:hover:not(footer .icon) {
 	scale: 1.2;
 	transform: rotate(2turn);
 }
