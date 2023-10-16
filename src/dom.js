@@ -113,7 +113,23 @@ export const Dom = (() => {
 		tooltip.style.left = `${offsetX}px`;
 	};
 
-	return {setImages, toggleFullscreenImg, positionTooltip};
+	/**
+	 * Add `text` to clipboard (copy)
+	 * @async
+	 *
+	 * @param {string} text Text to copy
+	 *
+	 * @throw If writing to clipboard fails
+	 */
+	const copyText = async (text) => {
+		try {
+			await navigator.clipboard.writeText(text);
+		} catch (err) {
+			throw Error('Failed to copy text');
+		}
+	};
+
+	return {setImages, toggleFullscreenImg, positionTooltip, copyText};
 })();
 
 
